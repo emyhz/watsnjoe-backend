@@ -37,7 +37,7 @@ public class Visitor {
 
     public Visitor(Long id, String firstName, String lastName,
                    String email, String phoneNumber,
-                   Locale preferredLanguage) {
+                   Locale preferredLanguage, Resident primaryResident) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
