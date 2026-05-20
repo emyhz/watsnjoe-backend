@@ -7,7 +7,7 @@ import lombok.Setter;
 public class UpdateVisitorRequest {
 
     @Getter @Setter
-    private long id;
+    private Long id;
 
     @NotNull
     @Getter @Setter
@@ -28,7 +28,7 @@ public class UpdateVisitorRequest {
     @Getter @Setter
     private String languageCode;
 
-    public UpdateVisitorRequest(long id, String firstName, String lastName,
+    public UpdateVisitorRequest(Long id, String firstName, String lastName,
                                 String email, String phoneNumber, String languageCode) {
         this.id = id;
         this.firstName = firstName;

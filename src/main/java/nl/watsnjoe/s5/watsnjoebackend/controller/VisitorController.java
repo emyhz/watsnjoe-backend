@@ -88,7 +88,7 @@ public class VisitorController {
 
     /** PUT /visitors/{id} — update visitor details */
     @PutMapping("{id}")
-    public ResponseEntity<Object> updateVisitor(@PathVariable long id,
+    public ResponseEntity<Object> updateVisitor(@PathVariable("id") long id,
                                                 @RequestBody UpdateVisitorRequest request) {
         try {
             request.setId(id);
