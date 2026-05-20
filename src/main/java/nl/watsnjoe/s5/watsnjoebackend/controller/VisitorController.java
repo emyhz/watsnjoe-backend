@@ -56,7 +56,7 @@ public class VisitorController {
         return ResponseEntity.ok(response);
     }
 
-    /** GET /visitors/{id} — get a single visitor by id */
+
     @GetMapping("{id}")
     public ResponseEntity<GetVisitorResponse> getVisitor(@PathVariable long id) {
         Optional<Visitor> visitorOptional = visitorService.getVisitor(id);
@@ -76,7 +76,7 @@ public class VisitorController {
         return ResponseEntity.ok(VisitorConverter.visitorToGetVisitorResponse(visitorOptional.get()));
     }
 
-    /** GET /visitors/phone?phoneNumber=... — look up visitor by phone (QR / deep-link flow) */
+    /** GET /visitors/phone?phoneNumber=...*/
     @GetMapping("/phone")
     public ResponseEntity<Object> getVisitorByPhone(@RequestParam String phoneNumber) {
         Optional<Visitor> visitorOptional = visitorService.getVisitorByPhoneNumber(phoneNumber);
