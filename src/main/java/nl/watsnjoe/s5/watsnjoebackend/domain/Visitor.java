@@ -9,25 +9,14 @@ public class Visitor {
 
     @Getter @Setter
     private Long id;
-
-    /** Display name used in the personalised phone screen, e.g. "Hallo Anja" */
     @Getter @Setter
     private String firstName;
-
     @Getter @Setter
     private String lastName;
-
-    /** Contact e-mail for pre-visit emails */
     @Getter @Setter
     private String email;
-
-    /** Phone number for SMS / QR follow-up */
     @Getter @Setter
     private String phoneNumber;
-
-    /**
-     * Preferred language for kiosk and email content.
-     */
     @Getter @Setter
     private Locale preferredLanguage;
 
