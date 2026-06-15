@@ -36,7 +36,6 @@ public class Visitorcontrollerapitest {
     private final Visitor visitor2 = new Visitor(2L, "Thomas", "Jansen",
             "thomas@email.nl", "0687654321", new Locale("nl"), null);
 
-    // ── POST /visitors ──────────────────────────────────────────────────────
 
     @Test
     void createVisitor_ShouldReturn201() throws Exception {
@@ -63,7 +62,6 @@ public class Visitorcontrollerapitest {
                 "anja@email.nl", "0612345678", "nl");
     }
 
-    // ── GET /visitors ───────────────────────────────────────────────────────
 
     @Test
     void getAllVisitors_ShouldReturn200() throws Exception {
@@ -78,7 +76,6 @@ public class Visitorcontrollerapitest {
         verify(visitorService).getAllVisitors();
     }
 
-    // ── GET /visitors/{id} ──────────────────────────────────────────────────
 
     @Test
     void getVisitor_ShouldReturn200_WhenFound() throws Exception {
@@ -103,7 +100,6 @@ public class Visitorcontrollerapitest {
         verify(visitorService).getVisitor(99L);
     }
 
-    // ── GET /visitors/email ─────────────────────────────────────────────────
 
     @Test
     void getVisitorByEmail_ShouldReturn200_WhenFound() throws Exception {
@@ -130,7 +126,6 @@ public class Visitorcontrollerapitest {
         verify(visitorService).getVisitorByEmail("nobody@email.nl");
     }
 
-    // ── GET /visitors/phone ─────────────────────────────────────────────────
 
     @Test
     void getVisitorByPhone_ShouldReturn200_WhenFound() throws Exception {
@@ -157,7 +152,6 @@ public class Visitorcontrollerapitest {
         verify(visitorService).getVisitorByPhoneNumber("0600000000");
     }
 
-    // ── PUT /visitors/{id} ──────────────────────────────────────────────────
 
     @Test
     void updateVisitor_ShouldReturn204() throws Exception {
@@ -183,7 +177,6 @@ public class Visitorcontrollerapitest {
                 "anja@email.nl", "0612345678", "nl");
     }
 
-    // ── DELETE /visitors/{id} ───────────────────────────────────────────────
 
     @Test
     void deleteVisitor_ShouldReturn204() throws Exception {

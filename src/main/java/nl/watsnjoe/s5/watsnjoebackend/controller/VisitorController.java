@@ -27,7 +27,7 @@ public class VisitorController {
         this.visitorService = visitorService;
     }
 
-    /** POST /visitors — register a new visitor */
+    /** register a new visitor */
     @PostMapping
     public ResponseEntity<Object> createVisitor(@RequestBody CreateVisitorRequest request) {
         try {
@@ -45,7 +45,7 @@ public class VisitorController {
         }
     }
 
-    /** GET /visitors — get all visitors */
+    /**get all visitors */
     @GetMapping
     public ResponseEntity<List<GetVisitorResponse>> getAllVisitors() {
         List<Visitor> visitors = visitorService.getAllVisitors();
@@ -66,7 +66,7 @@ public class VisitorController {
         return ResponseEntity.ok(VisitorConverter.visitorToGetVisitorResponse(visitorOptional.get()));
     }
 
-    /** GET /visitors/email?email=... — look up returning visitor by email (return-visit phone screen) */
+    /** look up returning visitor by email (return-visit phone screen) */
     @GetMapping("/email")
     public ResponseEntity<Object> getVisitorByEmail(@RequestParam String email) {
         Optional<Visitor> visitorOptional = visitorService.getVisitorByEmail(email);
@@ -76,7 +76,6 @@ public class VisitorController {
         return ResponseEntity.ok(VisitorConverter.visitorToGetVisitorResponse(visitorOptional.get()));
     }
 
-    /** GET /visitors/phone?phoneNumber=...*/
     @GetMapping("/phone")
     public ResponseEntity<Object> getVisitorByPhone(@RequestParam String phoneNumber) {
         Optional<Visitor> visitorOptional = visitorService.getVisitorByPhoneNumber(phoneNumber);
@@ -86,7 +85,7 @@ public class VisitorController {
         return ResponseEntity.ok(VisitorConverter.visitorToGetVisitorResponse(visitorOptional.get()));
     }
 
-    /** PUT /visitors/{id} — update visitor details */
+    /**update visitor details */
     @PutMapping("{id}")
     public ResponseEntity<Object> updateVisitor(@PathVariable("id") long id,
                                                 @RequestBody UpdateVisitorRequest request) {
@@ -106,7 +105,7 @@ public class VisitorController {
         }
     }
 
-    /** DELETE /visitors/{id} — remove a visitor */
+    /**remove a visitor */
     @DeleteMapping("{id}")
     public ResponseEntity<Object> deleteVisitor(@PathVariable long id) {
         visitorService.deleteVisitor(id);
